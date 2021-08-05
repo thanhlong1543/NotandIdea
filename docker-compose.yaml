@@ -1,6 +1,15 @@
 version: "3"
 
 services:
+
+  server:
+    image: ambi
+    build: .
+    ports:
+      - 8080:8080
+    links:
+      - mysqldb
+
   mysqldb:
     image: mysql:latest
     environment:
